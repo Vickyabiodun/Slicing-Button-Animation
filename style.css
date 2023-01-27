@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway', Arial, sans-serif;
+}
+
+.loader {
+  width:300px;
+  height: 60px;
+  border: 7px solid #e1869f;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 60px;
+  position: relative;
+  overflow: hidden;
+}
+span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 48px;
+}
+.top-half{
+  color:#aa2347;
+  /* i will go to cliipy and pick s make a triangle and cut till i get a full half of the rectangle. I will then cut it to get the top half of the element. */
+clip-path: polygon(0 0, 100% 0,100% 50%, 0 50% );
+animation: split 4s linear infinite;
+}
+
+.bottom-half{
+  color:#6c679f;
+  /* i will go to cliipy and pick s make a triangle and cut till i get a full half of the rectangle. I will then cut it to get the bottom half of the element. */
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100% );
+  animation: split 4s linear infinite reverse;
+
+}
+
+@keyframes split{
+  0%{ transform: translateX(100%);}
+  40%{ transform: translateX(0%);}
+  60%{ transform: translateX(0%);}
+  100%{ transform: translateX(-100%);}
+
+}
